@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tickets",
+  "info": {
+    "singularName": "ticket",
+    "pluralName": "tickets",
+    "displayName": "Ticket ",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Reference_number": {
+      "type": "uid"
+    },
+    "Seats_with": {
+      "type": "integer"
+    },
+    "Seats_without": {
+      "type": "integer"
+    },
+    "Total": {
+      "type": "decimal"
+    },
+    "Total_seats": {
+      "type": "integer"
+    },
+    "event": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::event.event",
+      "inversedBy": "tickets"
+    }
+  }
+}
